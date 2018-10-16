@@ -1,19 +1,19 @@
 const express = require('express');
-var app = express();
+const app = express();
 /*loading in handlebars */
-var hbs = require('hbs');
-
+const hbs = require('hbs');
+const port = process.env.port || 3000;
 /*to render dynamic data in html 
 procedure use one line code down below,create views/partials/filename.hbs and use {{> filename}}  in server.js */
 hbs.registerPartials(__dirname + '/views/partials');
 
 
-hbs.registerHelper('getCurrentYear',()=>{
-    return  new Date().getFullYear()
+hbs.registerHelper('getCurrentYear', () => {
+    return new Date().getFullYear()
 });
 
-hbs.registerHelper('getMessage',(text)=>{
-    return  text.toUpperCase();
+hbs.registerHelper('getMessage', (text) => {
+    return text.toUpperCase();
 });
 /*app.set('key','value'); key-u wanna set, value-which want to use */
 app.set('view engine', 'hbs');
@@ -37,6 +37,6 @@ app.get('/about', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("server is up on 3000")
+app.listen(port, () => {
+    console.log(`server is up on ${port}`)
 });
