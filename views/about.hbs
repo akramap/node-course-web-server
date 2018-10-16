@@ -7,13 +7,14 @@
     </head>
 
     <body>
-        {{> header}}
-        {{!-- <h1>{{pageTitle}}</h1> --}}
-
+        {{> header}} {{!--
+        <h1>{{pageTitle}}</h1> --}} 
+        
+        {{!-- using registerHelper() function and passinng message as parameter down below--}}
         <p>{{getMessage message}}</p>
 
-        {{> footer}} 
-        {{!--
+        {{!-- using partials for footer foe redundant/reusable code --}}
+        {{> footer}} {{!--
         <footer>
             <p>{{currentyear}}</p>
         </footer> --}}
