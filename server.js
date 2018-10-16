@@ -33,9 +33,16 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
-        message: 'welcome to the website',
+        message: 'welcome to the About website',
         // currentyear: new Date().getFullYear()
     })
+});
+
+app.get('/projects',(req,res)=>{
+res.render('projects.hbs',{
+    pageTitle:'newAbout',
+    message:'Welcome to new website'
+})
 })
 
 app.listen(port, () => {
