@@ -3,7 +3,7 @@ const app = express();
 /*loading in handlebars */
 const hbs = require('hbs');
 
-const port = process.env.port || 3000;
+const port = process.env.port || 3300;
 /*to render dynamic data in html 
 procedure use one line code down below,create views/partials/filename.hbs and use {{> filename}}  in server.js */
 hbs.registerPartials(__dirname + '/views/partials');
